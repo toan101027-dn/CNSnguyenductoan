@@ -1,13 +1,14 @@
 /**
  * script.js – Portfolio Nguyễn Đức Toàn
  * Chức năng:
- *  1. Navbar: sticky + highlight active link
- *  2. Hamburger menu (mobile)
- *  3. Scroll-reveal animation
- *  4. Modal "Xem chi tiết"
+ * 1. Navbar: sticky + highlight active link
+ * 2. Hamburger menu (mobile)
+ * 3. Scroll-reveal animation
+ * 4. Modal "Xem chi tiết"
+ * 5. Quản lý và lưu trữ file minh chứng dạng Base64 vào localStorage (Tương thích tốt chạy local)
  */
 
-/* ── 1. DỮ LIỆU CÁC BÀI TẬP (dùng cho modal) ────────────── */
+/* ── 1. DỮ LIỆU CÁC BÀI TẬP (Dùng cho Modal chi tiết) ────────────── */
 const projects = {
   1: {
     title: 'Máy tính và các thiết bị ngoại vi',
@@ -28,382 +29,305 @@ const projects = {
     process: [
       'Học và luyện tập các toán tử tìm kiếm nâng cao (AND, OR, NOT, site:, filetype:…).',
       'Đánh giá độ tin cậy của nguồn thông tin theo tiêu chí CRAAP (Currency, Relevance, Authority, Accuracy, Purpose).',
-      'Tổng hợp kết quả vào báo cáo PDF.',
+      'Lập bảng tổng hợp các nguồn tài liệu học thuật đã đánh giá.',
     ],
-    attach: 'PDF',
-    attachIcon: 'fa-file-pdf',
+    attach: 'Bảng đánh giá (PDF/Excel)',
+    attachIcon: 'fa-file-excel',
   },
   3: {
-    title: 'Tổng quan về Trí tuệ nhân tạo',
-    icon:  'fa-robot',
-    goal:  'Tìm hiểu khái niệm và ứng dụng AI.',
+    title: 'Tổng quan về trí tuệ nhân tạo',
+    icon:  'fa-brain',
+    goal:  'Học cách viết prompt hiệu quả để tối ưu kết quả từ AI.',
     process: [
-      'Nghiên cứu lịch sử hình thành và các nhánh chính của AI (ML, Deep Learning, NLP, Computer Vision…).',
-      'Khảo sát các lĩnh vực ứng dụng AI: y tế, giao thông, giáo dục, sản xuất.',
-      'Đánh giá tác động tích cực và tiêu cực của AI đối với xã hội.',
+      'Tìm hiểu các cấu trúc prompt cơ bản và nâng cao (Role, Context, Task, Format).',
+      'Thử nghiệm so sánh kết quả giữa prompt thông thường và prompt cải tiến.',
+      'Đúc kết kinh nghiệm ứng dụng AI trong học tập một cách có trách nhiệm.',
     ],
-    attach: 'PDF',
-    attachIcon: 'fa-file-pdf',
+    attach: 'Cặp Prompt đối sánh',
+    attachIcon: 'fa-comments',
   },
   4: {
-    title: 'Giao tiếp & Hợp tác trong môi trường số',
-    icon:  'fa-users',
-    goal:  'Sử dụng công cụ cộng tác trực tuyến hiệu quả.',
+    title: 'Giao tiếp và hợp tác trong môi trường số',
+    icon:  'fa-users-gear',
+    goal:  'Ứng dụng công cụ số để làm việc nhóm hiệu quả.',
     process: [
-      'Thực hành quản lý dự án nhóm trên các nền tảng như Google Workspace, Trello hoặc Notion.',
-      'Tổ chức họp nhóm trực tuyến và ghi chú biên bản bằng công cụ số.',
-      'Chia sẻ tài liệu, phân công nhiệm vụ và theo dõi tiến độ theo thời gian thực.',
+      'Sử dụng các nền tảng lưu trữ và chia sẻ trực tuyến (Google Drive, OneDrive).',
+      'Phối hợp biên tập tài liệu, quản lý tiến độ công việc theo thời gian thực.',
+      'Xây dựng quy trình làm việc nhóm đồng bộ, rõ ràng.',
     ],
-    attach: 'Hình ảnh / Link',
-    attachIcon: 'fa-image',
+    attach: 'Minh chứng thư mục nhóm',
+    attachIcon: 'fa-folder-open',
   },
   5: {
     title: 'Sáng tạo nội dung số',
-    icon:  'fa-wand-magic-sparkles',
-    goal:  'Ứng dụng AI tạo sinh để hỗ trợ sáng tạo nội dung.',
+    icon:  'fa-photo-film',
+    goal:  'Sử dụng AI hỗ trợ lên ý tưởng và tạo sản phẩm truyền thông.',
     process: [
-      'Sử dụng các công cụ AI tạo sinh (ChatGPT, Gemini, Canva AI…) để tạo văn bản, hình ảnh và video.',
-      'Chỉnh sửa, hoàn thiện sản phẩm đảm bảo tính thẩm mỹ và nội dung phù hợp.',
-      'Đánh giá chất lượng đầu ra và rút kinh nghiệm về cách đặt prompt hiệu quả.',
+      'Sử dụng AI tạo sinh để hỗ trợ xây dựng kịch bản, viết nội dung bài đăng.',
+      'Ứng dụng các công cụ thiết kế (Canva, CapCut, Midjourney...) thiết kế ấn phẩm.',
+      'Hoàn thiện sản phẩm số (hình ảnh, video short, bài viết truyền thông).',
     ],
-    attach: 'Video / Hình ảnh',
-    attachIcon: 'fa-video',
+    attach: 'Hình ảnh / Link Video sản phẩm',
+    attachIcon: 'fa-file-video',
   },
   6: {
-    title: 'An toàn & Liêm chính học thuật trong môi trường số',
+    title: 'An toàn và liêm chính học thuật trong môi trường số',
     icon:  'fa-shield-halved',
-    goal:  'Nâng cao nhận thức về sử dụng AI có trách nhiệm.',
+    goal:  'Hiểu về an toàn thông tin và đạo đức khi sử dụng AI.',
     process: [
-      'Nghiên cứu các nguyên tắc đạo đức AI: công bằng, minh bạch, bảo mật dữ liệu.',
-      'Tìm hiểu quy tắc liêm chính học thuật: tránh đạo văn, ghi nguồn trích dẫn đúng chuẩn.',
-      'Thảo luận về ranh giới giữa hỗ trợ AI hợp lệ và vi phạm học thuật.',
+      'Nghiên cứu các nguy cơ mất an toàn thông tin cá nhân trên mạng xã hội.',
+      'Tìm hiểu về khái niệm đạo văn và nguyên tắc liêm chính học thuật thời đại AI.',
+      'Xây dựng bảng cam kết/nguyên tắc cá nhân khi khai thác tài nguyên số.',
     ],
-    attach: 'PDF',
-    attachIcon: 'fa-file-pdf',
+    attach: 'Bộ nguyên tắc cá nhân (PDF)',
+    attachIcon: 'fa-file-shield',
   },
 };
 
-/* ── 2. NAVBAR STICKY & ACTIVE LINK ─────────────────────── */
-const navbar   = document.getElementById('navbar');
-const navLinks = document.querySelectorAll('.nav-link');
-const sections = document.querySelectorAll('section[id]');
+/* ── 2. ĐIỀU HƯỚNG & GIAO DIỆN (NAVBAR & MENU) ────── */
+document.addEventListener('DOMContentLoaded', () => {
+  const navbar = document.getElementById('navbar');
+  const hamburger = document.getElementById('hamburger');
+  const navLinksList = document.getElementById('nav-links');
+  const navLinks = document.querySelectorAll('.nav-link');
+  const sections = document.querySelectorAll('section, header');
 
-/**
- * Thêm class "scrolled" khi cuộn xuống hơn 40px
- * và cập nhật link đang active dựa vào section hiện tại
- */
-function onScroll() {
-  // Sticky style
-  if (window.scrollY > 40) {
-    navbar.classList.add('scrolled');
-  } else {
-    navbar.classList.remove('scrolled');
-  }
-
-  // Active link
-  let current = '';
-  sections.forEach(sec => {
-    const top = sec.offsetTop - 100;
-    if (window.scrollY >= top) {
-      current = sec.getAttribute('id');
+  // Sticky Navbar + Highlight Link khi cuộn chuột
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 20) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
     }
-  });
 
-  navLinks.forEach(link => {
-    link.classList.remove('active');
-    if (link.getAttribute('href') === `#${current}`) {
-      link.classList.add('active');
-    }
-  });
-}
+    let currentId = '';
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 80;
+      if (window.scrollY >= sectionTop) {
+        currentId = section.getAttribute('id');
+      }
+    });
 
-window.addEventListener('scroll', onScroll, { passive: true });
-
-/* ── 3. HAMBURGER MENU (mobile) ──────────────────────────── */
-const hamburger   = document.getElementById('hamburger');
-const navLinkList = document.getElementById('nav-links');
-
-hamburger.addEventListener('click', () => {
-  const isOpen = hamburger.classList.toggle('open');
-  navLinkList.classList.toggle('open', isOpen);
-  hamburger.setAttribute('aria-expanded', isOpen);
-});
-
-// Đóng menu khi click vào link
-navLinkList.querySelectorAll('a').forEach(a => {
-  a.addEventListener('click', () => {
-    hamburger.classList.remove('open');
-    navLinkList.classList.remove('open');
-  });
-});
-
-/* ── 4. SCROLL-REVEAL ANIMATION ─────────────────────────── */
-/**
- * Thêm class "reveal" vào các phần tử cần animate,
- * sau đó dùng IntersectionObserver để thêm "visible"
- */
-function initReveal() {
-  // Các phần tử cần reveal
-  const targets = [
-    '.section-heading',
-    '.about-left',
-    '.about-right',
-    '.card',
-    '.sum-card',
-    '.summary-lead',
-  ];
-
-  targets.forEach(selector => {
-    document.querySelectorAll(selector).forEach((el, i) => {
-      el.classList.add('reveal');
-      // Stagger delay cho cards
-      if (selector === '.card' || selector === '.sum-card') {
-        el.style.transitionDelay = `${i * 0.08}s`;
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === `#${currentId}`) {
+        link.classList.add('active');
       }
     });
   });
 
-  const observer = new IntersectionObserver(
-    entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target); // chỉ chạy 1 lần
-        }
+  // Toggle Hamburger Menu cho Mobile
+  if (hamburger && navLinksList) {
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      navLinksList.classList.toggle('active');
+    });
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        navLinksList.classList.remove('active');
       });
-    },
-    { threshold: 0.12 }
-  );
+    });
+  }
 
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-}
-
-initReveal();
-
-/* ── 5. MODAL "XEM CHI TIẾT" ─────────────────────────────── */
-const overlay     = document.getElementById('modal-overlay');
-const modalClose  = document.getElementById('modal-close');
-const modalContent = document.getElementById('modal-content');
-
-/**
- * Mở modal với nội dung của bài tập có index tương ứng
- * @param {number} index - số thứ tự bài tập (1-6)
- */
-function openModal(index) {
-  const p = projects[index];
-  if (!p) return;
-
-  // Xây dựng HTML nội dung modal
-  const processList = p.process
-    .map(step => `<li>${step}</li>`)
-    .join('');
-
-  modalContent.innerHTML = `
-    <span class="modal-badge">Bài ${String(index).padStart(2, '0')}</span>
-    <h2><i class="fa-solid ${p.icon}" style="color:var(--amber);margin-right:10px;"></i>${p.title}</h2>
-    <p><strong>Mục tiêu:</strong><br/>${p.goal}</p>
-    <p style="margin-top:14px;"><strong>Quá trình thực hiện:</strong></p>
-    <ul style="margin-left:16px;margin-top:8px;">${processList}</ul>
-    <div class="modal-attach">
-      <i class="fa-solid ${p.attachIcon}"></i>
-      <span>Sản phẩm đính kèm: <strong>${p.attach}</strong> (placeholder)</span>
-    </div>
-  `;
-
-  overlay.classList.add('active');
-  document.body.style.overflow = 'hidden'; // khóa cuộn nền
-}
-
-/** Đóng modal */
-function closeModal() {
-  overlay.classList.remove('active');
-  document.body.style.overflow = '';
-}
-
-// Nút X trong modal
-modalClose.addEventListener('click', closeModal);
-
-// Click ra ngoài modal box cũng đóng
-overlay.addEventListener('click', e => {
-  if (e.target === overlay) closeModal();
-});
-
-// Phím Escape đóng modal
-document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') closeModal();
-});
-
-// Expose cho inline onclick trong HTML
-window.openModal = openModal;
-
-
-/* ── 6. UPLOAD FILE HANDLER ──────────────────────────────── */
-
-/**
- * Lưu trữ danh sách file đã chọn theo bài (key = số bài tập)
- * Mỗi entry: { name, size, type, dataURL }
- * Dùng localStorage để giữ tên file sau khi reload trang.
- */
-const uploadedFiles = {}; // { 1: [{name, size, typeClass, dataURL}], ... }
-
-// Khởi tạo từ localStorage khi tải trang
-(function loadFromStorage() {
+  // Tải và hiển thị danh sách các file đã lưu từ trước khi tải trang
   for (let i = 1; i <= 6; i++) {
-    const saved = localStorage.getItem(`portfolio_files_${i}`);
-    if (saved) {
-      try {
-        uploadedFiles[i] = JSON.parse(saved);
-        renderFileList(i);
-      } catch(e) { /* bỏ qua lỗi parse */ }
-    } else {
-      uploadedFiles[i] = [];
-    }
+    renderFileList(i);
   }
-})();
+});
 
-/** Lưu vào localStorage */
-function saveToStorage(index) {
-  localStorage.setItem(`portfolio_files_${index}`, JSON.stringify(uploadedFiles[index]));
-}
+/* ── 3. HIỂN THỊ MODAL CHI TIẾT BÀI TẬP ──────────────────────────── */
+function openModal(id) {
+  const project = projects[id];
+  if (!project) return;
 
-/** Xác định class icon theo đuôi file */
-function getTypeClass(filename) {
-  const ext = filename.split('.').pop().toLowerCase();
-  if (ext === 'pdf') return 'pdf';
-  if (['doc','docx'].includes(ext)) return 'doc';
-  if (['ppt','pptx'].includes(ext)) return 'ppt';
-  if (['jpg','jpeg','png','gif','webp'].includes(ext)) return 'img';
-  if (['mp4','mov','avi','mkv'].includes(ext)) return 'vid';
-  if (['zip','rar','7z'].includes(ext)) return 'zip';
-  return 'other';
-}
+  document.getElementById('modal-title').innerText = project.title;
+  document.getElementById('modal-goal').innerText = project.goal;
 
-/** Lấy icon FontAwesome theo typeClass */
-function getTypeIcon(typeClass) {
-  const map = {
-    pdf:   'fa-file-pdf',
-    doc:   'fa-file-word',
-    ppt:   'fa-file-powerpoint',
-    img:   'fa-file-image',
-    vid:   'fa-file-video',
-    zip:   'fa-file-zipper',
-    other: 'fa-file',
-  };
-  return map[typeClass] || 'fa-file';
-}
-
-/** Định dạng kích thước file */
-function formatSize(bytes) {
-  if (bytes < 1024) return bytes + ' B';
-  if (bytes < 1048576) return (bytes / 1024).toFixed(1) + ' KB';
-  return (bytes / 1048576).toFixed(1) + ' MB';
-}
-
-/**
- * Render danh sách file đã upload vào card
- * @param {number} index - số bài tập
- */
-function renderFileList(index) {
-  const zone  = document.getElementById(`upload-zone-${index}`);
-  const list  = document.getElementById(`upload-list-${index}`);
-  const files = uploadedFiles[index] || [];
-
-  if (files.length === 0) {
-    zone.classList.remove('has-files');
-    list.innerHTML = '';
-    return;
-  }
-
-  zone.classList.add('has-files');
-
-  // Header + nút xóa tất cả
-  let html = `
-    <div class="upload-list-header">
-      <span><i class="fa-solid fa-paperclip"></i>&nbsp; ${files.length} file đính kèm</span>
-      <button class="upload-clear-all" onclick="clearAllFiles(${index})">
-        <i class="fa-solid fa-trash-can"></i> Xóa tất cả
-      </button>
-    </div>
-  `;
-
-  files.forEach((f, i) => {
-    const icon = getTypeIcon(f.typeClass);
-    html += `
-      <div class="upload-file-item" id="file-item-${index}-${i}">
-        <span class="file-type-icon ${f.typeClass}">
-          <i class="fa-solid ${icon}"></i>
-        </span>
-        <div class="file-info">
-          <span class="file-name" title="${f.name}">${f.name}</span>
-          <span class="file-size">${f.size}</span>
-        </div>
-        <span class="file-status">
-          <i class="fa-solid fa-circle-check"></i> Đã thêm
-        </span>
-        <button class="file-remove" onclick="removeFile(${index}, ${i})" title="Xóa file này">
-          <i class="fa-solid fa-xmark"></i>
-        </button>
-      </div>
-    `;
+  const processList = document.getElementById('modal-process');
+  processList.innerHTML = '';
+  project.process.forEach(step => {
+    const li = document.createElement('li');
+    li.innerText = step;
+    processList.appendChild(li);
   });
 
-  list.innerHTML = html;
+  document.getElementById('modal-attach-text').innerText = project.attach;
+  const attachIcon = document.getElementById('modal-attach-icon');
+  if (attachIcon) attachIcon.className = `fa-solid ${project.attachIcon}`;
+
+  document.getElementById('modal-overlay').classList.add('active');
+  document.body.style.overflow = 'hidden'; // Khóa cuộn màn hình nền
+}
+
+function closeModal() {
+  document.getElementById('modal-overlay').classList.remove('active');
+  document.body.style.overflow = ''; // Mở lại cuộn màn hình
+}
+
+document.getElementById('modal-close')?.addEventListener('click', closeModal);
+document.getElementById('modal-overlay')?.addEventListener('click', (e) => {
+  if (e.target === document.getElementById('modal-overlay')) closeModal();
+});
+
+
+/* ── 4. XỬ LÝ FILE (FILE READER API & LOCAL STORAGE) ────── */
+let uploadedFiles = {};
+
+// Khởi tạo đọc dữ liệu từ bộ nhớ localStorage của trình duyệt
+try {
+  const savedData = localStorage.getItem('portfolio_files');
+  if (savedData) {
+    uploadedFiles = JSON.parse(savedData);
+  }
+} catch (e) {
+  console.error("Không thể khôi phục dữ liệu tệp tin từ localStorage:", e);
 }
 
 /**
- * Xử lý khi người dùng chọn file qua input
+ * Hàm đồng bộ trạng thái lưu tệp tin vào localStorage
  */
-function handleFileChange(event, index) {
-  const files = Array.from(event.target.files);
-  addFiles(index, files);
-  // Reset input để có thể chọn lại cùng file
-  event.target.value = '';
+function saveToStorage() {
+  try {
+    localStorage.setItem('portfolio_files', JSON.stringify(uploadedFiles));
+  } catch (e) {
+    alert("⚠️ Lỗi dung lượng: Không thể lưu tệp! Bộ nhớ cục bộ (localStorage) bị tràn (Tối đa ~5MB). Vui lòng nén ảnh nhỏ lại hoặc chọn tệp nhẹ hơn.");
+    console.error(e);
+  }
 }
 
 /**
- * Thêm các file vào danh sách của bài tập
- * @param {number} index
- * @param {File[]} files
+ * Xử lý khi nhấn nút "Chọn tệp tin" ở giao diện HTML
  */
-function addFiles(index, files) {
+function handleFileChange(inputElement, index) {
+  if (!inputElement || !inputElement.files || inputElement.files.length === 0) return;
+  const files = Array.from(inputElement.files);
+  processFiles(index, files);
+  inputElement.value = ''; // Reset input để cho phép chọn lại cùng một file
+}
+
+/**
+ * Đọc lõi nhị phân của tệp tin chuyển thành chuỗi văn bản Base64
+ */
+function processFiles(index, files) {
   if (!uploadedFiles[index]) uploadedFiles[index] = [];
 
   files.forEach(file => {
-    // Kiểm tra trùng tên
-    const exists = uploadedFiles[index].some(f => f.name === file.name);
-    if (exists) return;
+    // Ngăn chặn tải lên các tệp trùng tên trong cùng một bài tập
+    const isDuplicate = uploadedFiles[index].some(f => f.name === file.name);
+    if (isDuplicate) return;
 
-    uploadedFiles[index].push({
-      name:      file.name,
-      size:      formatSize(file.size),
-      typeClass: getTypeClass(file.name),
-    });
+    const reader = new FileReader();
+    
+    // Sự kiện chạy sau khi FileReader quét thành công tệp tin
+    reader.onload = function(e) {
+      const base64Data = e.target.result; // Ruột tệp tin đã mã hóa Base64
+
+      uploadedFiles[index].push({
+        name: file.name,
+        size: formatSize(file.size),
+        typeClass: getTypeClass(file.name),
+        data: base64Data // Đút văn bản Base64 này vào Object để lưu
+      });
+
+      saveToStorage();
+      renderFileList(index);
+    };
+
+    // Kích hoạt đầu đọc chuyển đổi file nhị phân thành chuỗi văn bản DataURL Base64
+    reader.readAsDataURL(file);
   });
-
-  saveToStorage(index);
-  renderFileList(index);
 }
 
 /**
- * Xóa một file khỏi danh sách
+ * Vẽ danh sách hiển thị các tệp đã lưu ra ngoài giao diện người dùng
+ */
+function renderFileList(index) {
+  const listContainer = document.getElementById(`file-list-${index}`);
+  if (!listContainer) return;
+
+  listContainer.innerHTML = '';
+  const files = uploadedFiles[index] || [];
+
+  if (files.length === 0) {
+    listContainer.style.display = 'none';
+    return;
+  }
+
+  listContainer.style.display = 'block';
+
+  // Khởi tạo phần thanh đầu danh sách (Số lượng tệp + Nút xóa sạch)
+  const header = document.createElement('div');
+  header.className = 'upload-list-header';
+  header.innerHTML = `
+    <span>Tệp tin đã tải lên (${files.length})</span>
+    <button class="clear-all-btn" onclick="clearAllFiles(${index})"><i class="fa-solid fa-trash-can"></i> Xóa hết</button>
+  `;
+  listContainer.appendChild(header);
+
+  // Vòng lặp xuất thẻ cho từng tệp tin
+  files.forEach((file, fileIdx) => {
+    const item = document.createElement('div');
+    item.className = 'file-item';
+
+    let iconClass = 'fa-file';
+    if (file.typeClass === 'image') iconClass = 'fa-file-image';
+    if (file.typeClass === 'pdf') iconClass = 'fa-file-pdf';
+    if (file.typeClass === 'word') iconClass = 'fa-file-word';
+
+    item.innerHTML = `
+      <div class="file-icon ${file.typeClass}"><i class="fa-solid ${iconClass}"></i></div>
+      <div class="file-details">
+        <a class="file-name" href="${file.data || '#'}" download="${file.name}" title="Nhấp để tải xuống">${file.name}</a>
+        <span class="file-size">${file.size}</span>
+      </div>
+      <div class="file-status"><i class="fa-solid fa-circle-check"></i> Đã lưu</div>
+      <button class="file-remove" onclick="removeFile(${index}, ${fileIdx})" title="Xóa file này"><i class="fa-solid fa-xmark"></i></button>
+    `;
+    listContainer.appendChild(item);
+  });
+}
+
+/**
+ * Xóa một tệp tin đơn lẻ khỏi danh sách bài tập
  */
 function removeFile(index, fileIdx) {
   if (!uploadedFiles[index]) return;
   uploadedFiles[index].splice(fileIdx, 1);
-  saveToStorage(index);
+  saveToStorage();
   renderFileList(index);
 }
 
 /**
- * Xóa toàn bộ file của một bài
+ * Xóa toàn bộ tệp tin của một mục bài tập cụ thể
  */
 function clearAllFiles(index) {
-  uploadedFiles[index] = [];
-  saveToStorage(index);
-  renderFileList(index);
+  if (confirm("Bạn có chắc chắn muốn xóa toàn bộ các tệp tin đã nộp của bài tập này không?")) {
+    uploadedFiles[index] = [];
+    saveToStorage();
+    renderFileList(index);
+  }
 }
 
-/* Drag & drop handlers */
+/* ── 5. CÁC HÀM TRỢ GIÚP TIỆN ÍCH (HELPERS) ───────────────────────── */
+function formatSize(bytes) {
+  if (bytes === 0) return '0 Bytes';
+  const k = 1024;
+  const sizes = ['Bytes', 'KB', 'MB'];
+  const i = Math.floor(Math.log(bytes) / Math.log(k));
+  return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+}
+
+function getTypeClass(filename) {
+  const ext = filename.split('.').pop().toLowerCase();
+  if (['jpg', 'jpeg', 'png', 'gif', 'svg', 'webp'].includes(ext)) return 'image';
+  if (ext === 'pdf') return 'pdf';
+  if (['doc', 'docx'].includes(ext)) return 'word';
+  return 'other';
+}
+
+/* Các hàm bắt tương tác kéo thả Drag & Drop từ màn hình máy tính */
 function handleDragOver(event) {
   event.preventDefault();
   event.currentTarget.classList.add('drag-over');
@@ -417,13 +341,14 @@ function handleDrop(event, index) {
   event.preventDefault();
   event.currentTarget.classList.remove('drag-over');
   const files = Array.from(event.dataTransfer.files);
-  addFiles(index, files);
+  processFiles(index, files);
 }
 
-// Expose functions dùng trong HTML inline handlers
+// Xuất các biến và hàm này ra phạm vi Global (window) để gọi trực tiếp được từ HTML inline handlers
 window.handleFileChange = handleFileChange;
-window.handleDragOver   = handleDragOver;
-window.handleDragLeave  = handleDragLeave;
-window.handleDrop       = handleDrop;
-window.removeFile       = removeFile;
-window.clearAllFiles    = clearAllFiles;
+window.removeFile = removeFile;
+window.clearAllFiles = clearAllFiles;
+window.handleDragOver = handleDragOver;
+window.handleDragLeave = handleDragLeave;
+window.handleDrop = handleDrop;
+window.openModal = openModal;

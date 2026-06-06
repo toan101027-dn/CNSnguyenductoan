@@ -12,399 +12,234 @@
 </head>
 <body>
 
-  <!-- ===================== NAVBAR ===================== -->
   <nav class="navbar" id="navbar">
     <div class="nav-container">
-      <a href="#hero" class="nav-brand">NDT<span class="dot">.</span></a>
+      <a href="#hero" class="nav-brand">NDT<span class=\"dot\">.</span></a>
       <button class="hamburger" id="hamburger" aria-label="Mở menu">
         <span></span><span></span><span></span>
       </button>
       <ul class="nav-links" id="nav-links">
         <li><a href="#about"    class="nav-link">Giới thiệu</a></li>
-        <li><a href="#projects" class="nav-link">Dự án</a></li>
+        <li><a href="#projects" class="nav-link">Bài tập dự án</a></li>
         <li><a href="#summary"  class="nav-link">Tổng kết</a></li>
       </ul>
     </div>
   </nav>
 
-  <!-- ===================== HERO ===================== -->
-  <section class="hero" id="hero">
-    <div class="hero-orb orb-1"></div>
-    <div class="hero-orb orb-2"></div>
-    <div class="hero-orb orb-3"></div>
-    <div class="hero-content">
-      <span class="hero-tag">Portfolio học phần</span>
-      <h1 class="hero-title">
-        Nguyễn<br/>
-        <em>Đức Toàn</em>
-      </h1>
-      <p class="hero-sub">Sinh viên Cơ điện tử · Nhập môn Công nghệ số &amp; Ứng dụng AI</p>
-      <div class="hero-cta">
-        <a href="#about"    class="btn btn-primary">Khám phá</a>
-        <a href="#projects" class="btn btn-outline">Xem dự án</a>
+  <header class="hero" id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-container">
+      <p class="hero-subtitle">Digital Portfolio — Cá nhân</p>
+      <h1 class="hero-title">Nguyễn Đức Toàn</h1>
+      <p class="hero-tagline">Sinh viên ngành Công nghệ Kỹ thuật Cơ điện tử</p>
+      <p class="hero-desc">Chào mừng thầy cô và các bạn đến với không gian lưu trữ và trưng bày sản phẩm học tập môn Nhập môn Công nghệ số và Ứng dụng Trí tuệ nhân tạo.</p>
+      <div class="hero-buttons">
+        <a href="#projects" class="btn btn--primary">Xem bài tập dự án</a>
+        <a href="#about" class="btn btn--secondary">Tìm hiểu về tôi</a>
       </div>
     </div>
-    <div class="scroll-hint">
-      <span>Cuộn xuống</span>
-      <div class="scroll-arrow"></div>
-    </div>
-  </section>
+  </header>
 
-  <!-- ===================== SECTION 1: ABOUT ===================== -->
-  <section class="section about-section" id="about">
+  <section class="about" id="about">
     <div class="container">
-      <div class="section-heading">
-        <span class="section-label">01 / Giới thiệu</span>
-        <h2 class="section-title">Xin chào!</h2>
+      <div class="section-header text-center">
+        <p class="section-subtitle">Chân dung cá nhân</p>
+        <h2 class="section-title display-font">Giới thiệu bản thân</h2>
+        <div class="header-line"></div>
       </div>
+
       <div class="about-grid">
-        <div class="about-left">
-          <div class="avatar-wrap">
-            <div class="avatar-placeholder">
-              <i class="fa-solid fa-user"></i>
-            </div>
-            <div class="avatar-badge"><i class="fa-solid fa-futbol"></i></div>
-          </div>
-          <div class="quick-info">
-            <div class="qi-card">
-              <i class="fa-solid fa-graduation-cap"></i>
-              <div>
-                <span class="qi-label">Ngành học</span>
-                <span class="qi-value">Cơ điện tử</span>
-              </div>
-            </div>
-            <div class="qi-card">
-              <i class="fa-solid fa-futbol"></i>
-              <div>
-                <span class="qi-label">Sở thích</span>
-                <span class="qi-value">Đá bóng</span>
-              </div>
-            </div>
-            <div class="qi-card">
-              <i class="fa-solid fa-calendar"></i>
-              <div>
-                <span class="qi-label">Năm học</span>
-                <span class="qi-value">2026</span>
-              </div>
-            </div>
-          </div>
+        <div class="about-card">
+          <div class="about-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+          <h3>Thông tin học tập</h3>
+          <p>Hiện đang theo học ngành <strong>Công nghệ Kỹ thuật Cơ điện tử</strong>. Với niềm đam mê kết hợp giữa cơ khí chính xác, điện tử điều khiển và tư duy thuật toán, tôi luôn tìm kiếm cơ hội ứng dụng công nghệ số vào thực tế.</p>
         </div>
-        <div class="about-right">
-          <p class="bio-lead">
-            Xin chào, tôi là <strong>Nguyễn Đức Toàn</strong>, sinh viên ngành
-            <strong>Cơ điện tử</strong>. Tôi yêu thích đá bóng và luôn mong muốn
-            phát triển các kỹ năng công nghệ số, kỹ năng làm việc nhóm và ứng dụng
-            trí tuệ nhân tạo trong học tập.
-          </p>
-          <div class="about-block">
-            <h3><i class="fa-solid fa-bullseye"></i> Mục tiêu học tập</h3>
-            <p>Nắm vững kiến thức nền về công nghệ số, khai thác hiệu quả các công cụ AI và
-               áp dụng chúng vào ngành học Cơ điện tử, góp phần nâng cao năng suất học tập
-               và nghiên cứu khoa học.</p>
-          </div>
-          <div class="about-block">
-            <h3><i class="fa-solid fa-road"></i> Định hướng phát triển</h3>
-            <p>Trở thành kỹ sư Cơ điện tử có năng lực số, thành thạo lập trình nhúng, tự động
-               hóa và ứng dụng AI trong điều khiển hệ thống. Song song đó, rèn luyện kỹ năng
-               mềm – lãnh đạo nhóm và giao tiếp chuyên nghiệp.</p>
-          </div>
-          <div class="about-block">
-            <h3><i class="fa-solid fa-folder-open"></i> Mục tiêu của Portfolio</h3>
-            <ul class="goal-list">
-              <li><i class="fa-solid fa-check"></i> Tổng hợp các sản phẩm học tập</li>
-              <li><i class="fa-solid fa-check"></i> Thể hiện các kỹ năng số đã học</li>
-              <li><i class="fa-solid fa-check"></i> Lưu trữ và chia sẻ sản phẩm cá nhân</li>
-              <li><i class="fa-solid fa-check"></i> Làm nền tảng phục vụ học tập &amp; phát triển nghề nghiệp</li>
-            </ul>
-          </div>
+        <div class="about-card">
+          <div class="about-icon"><i class="fa-solid fa-bullseye"></i></div>
+          <h3>Mục tiêu môn học</h3>
+          <p>Nắm vững kiến thức nền tảng về công nghệ số và AI, từ đó biết cách ứng dụng các mô hình ngôn ngữ lớn để tối ưu hiệu suất tự học, nghiên cứu khoa học và chuẩn bị hành trang làm việc thực tế.</p>
+        </div>
+        <div class="about-card">
+          <div class="about-icon"><i class="fa-solid fa-folder-open"></i></div>
+          <h3>Mục tiêu Portfolio</h3>
+          <p>Xây dựng một không gian số lưu trữ khoa học 6 bài tập dự án cá nhân, thể hiện rõ tiến trình tự học, kỹ năng giải quyết vấn đề và năng lực ứng dụng AI một cách có trách nhiệm.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===================== SECTION 2: PROJECTS ===================== -->
-  <section class="section projects-section" id="projects">
+  <section class="projects" id="projects">
     <div class="container">
-      <div class="section-heading center">
-        <span class="section-label">02 / Dự án học tập</span>
-        <h2 class="section-title">Bài tập &amp; Sản phẩm</h2>
-        <p class="section-desc">Tổng hợp 6 bài tập thực hiện trong học phần
-           <em>Nhập môn Công nghệ số và Ứng dụng Trí tuệ nhân tạo</em>.</p>
+      <div class="section-header text-center">
+        <p class="section-subtitle">Sản phẩm môn học</p>
+        <h2 class="section-title display-font">Danh sách bài tập dự án</h2>
+        <div class="header-line"></div>
       </div>
 
-      <div class="cards-grid">
-
-        <!-- CARD 1 -->
-        <article class="card" data-index="1">
-          <div class="card-icon-wrap">
-            <i class="fa-solid fa-computer"></i>
+      <div class="projects-grid">
+        
+        <article class="project-card">
+          <div class="project-num">01</div>
+          <div class="project-header">
+            <div class="project-icon-box"><i class="fa-solid fa-computer"></i></div>
+            <h3 class="project-title">Máy tính và các thiết bị ngoại vi</h3>
           </div>
-          <div class="card-body">
-            <span class="card-number">Bài 01</span>
-            <h3 class="card-title">Máy tính và các thiết bị ngoại vi</h3>
-            <div class="card-meta">
-              <div class="meta-row">
-                <i class="fa-solid fa-crosshairs"></i>
-                <div><strong>Mục tiêu:</strong> Tìm hiểu cấu tạo máy tính và thiết bị ngoại vi.</div>
-              </div>
-              <div class="meta-row">
-                <i class="fa-solid fa-list-check"></i>
-                <div><strong>Quá trình:</strong> Tìm hiểu phần cứng, phân loại thiết bị nhập/xuất và xây dựng sơ đồ minh họa.</div>
-              </div>
-            </div>
-            <!-- UPLOAD ZONE bài 1 -->
-            <div class="upload-zone" id="upload-zone-1" ondragover="handleDragOver(event)" ondragleave="handleDragLeave(event)" ondrop="handleDrop(event,1)">
-              <input type="file" id="file-input-1" class="file-input" accept=".pdf,.doc,.docx,.ppt,.pptx,.jpg,.jpeg,.png,.zip" onchange="handleFileChange(event,1)" multiple />
-              <div class="upload-idle" id="upload-idle-1">
-                <i class="fa-solid fa-cloud-arrow-up"></i>
-                <span class="upload-label">Kéo thả file vào đây</span>
-                <span class="upload-sub">hoặc</span>
-                <label for="file-input-1" class="upload-btn">Chọn file</label>
-                <span class="upload-types">PDF · DOC · PPT · JPG · PNG · ZIP</span>
-              </div>
-              <div class="upload-list" id="upload-list-1"></div>
-            </div>
+          <p class="project-desc">Bài tập tìm hiểu về kiến trúc máy tính, cách phân loại và quản lý cấu trúc tệp tin một cách khoa học trên hệ thống máy tính cá nhân.</p>
+          <div class="project-actions">
+            <button class="action-btn view-detail-btn" onclick="openModal(1)"><i class="fa-solid fa-arrow-up-right-from-square"></i> Xem yêu cầu</button>
           </div>
-          <div class="card-footer">
-            <button class="btn-detail" onclick="openModal(1)">
-              Xem chi tiết <i class="fa-solid fa-arrow-right"></i>
-            </button>
+          <div class="upload-zone">
+            <div class="upload-dropzone" ondragover="handleDragOver(event)" ondragleave="handleDragLeave(event)" ondrop="handleDrop(event, 1)">
+              <i class="fa-solid fa-cloud-arrow-up upload-icon"></i>
+              <p>Kéo & thả tệp vào đây hoặc</p>
+              <label class="upload-btn">
+                Chọn tệp tin
+                <input type="file" multiple onchange="handleFileChange(this, 1)">
+              </label>
+            </div>
+            <div class="upload-list" id="file-list-1"></div>
           </div>
         </article>
 
-        <!-- CARD 2 -->
-        <article class="card" data-index="2">
-          <div class="card-icon-wrap">
-            <i class="fa-solid fa-magnifying-glass-chart"></i>
+        <article class="project-card">
+          <div class="project-num">02</div>
+          <div class="project-header">
+            <div class="project-icon-box"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+            <h3 class="project-title">Khai thác dữ liệu và thông tin</h3>
           </div>
-          <div class="card-body">
-            <span class="card-number">Bài 02</span>
-            <h3 class="card-title">Khai thác dữ liệu và thông tin</h3>
-            <div class="card-meta">
-              <div class="meta-row">
-                <i class="fa-solid fa-crosshairs"></i>
-                <div><strong>Mục tiêu:</strong> Rèn luyện kỹ năng tìm kiếm và đánh giá nguồn thông tin.</div>
-              </div>
-              <div class="meta-row">
-                <i class="fa-solid fa-list-check"></i>
-                <div><strong>Quá trình:</strong> Sử dụng toán tử tìm kiếm nâng cao và đánh giá nguồn học thuật.</div>
-              </div>
-            </div>
-            <div class="upload-zone" id="upload-zone-2" ondragover="handleDragOver(event)" ondragleave="handleDragLeave(event)" ondrop="handleDrop(event,2)">
-              <input type="file" id="file-input-2" class="file-input" accept=".pdf,.doc,.docx,.ppt,.pptx,.jpg,.jpeg,.png,.zip" onchange="handleFileChange(event,2)" multiple />
-              <div class="upload-idle" id="upload-idle-2">
-                <i class="fa-solid fa-cloud-arrow-up"></i>
-                <span class="upload-label">Kéo thả file vào đây</span>
-                <span class="upload-sub">hoặc</span>
-                <label for="file-input-2" class="upload-btn">Chọn file</label>
-                <span class="upload-types">PDF · DOC · PPT · JPG · PNG · ZIP</span>
-              </div>
-              <div class="upload-list" id="upload-list-2"></div>
-            </div>
+          <p class="project-desc">Thực hành tìm kiếm thông tin nâng cao sử dụng các toán tử tìm kiếm chuyên biệt và ứng dụng bộ tiêu chí đánh giá độ tin cậy của tài liệu.</p>
+          <div class="project-actions">
+            <button class="action-btn view-detail-btn" onclick="openModal(2)"><i class="fa-solid fa-arrow-up-right-from-square"></i> Xem yêu cầu</button>
           </div>
-          <div class="card-footer">
-            <button class="btn-detail" onclick="openModal(2)">
-              Xem chi tiết <i class="fa-solid fa-arrow-right"></i>
-            </button>
+          <div class="upload-zone">
+            <div class="upload-dropzone" ondragover="handleDragOver(event)" ondragleave="handleDragLeave(event)" ondrop="handleDrop(event, 2)">
+              <i class="fa-solid fa-cloud-arrow-up upload-icon"></i>
+              <p>Kéo & thả tệp vào đây hoặc</p>
+              <label class="upload-btn">
+                Chọn tệp tin
+                <input type="file" multiple onchange="handleFileChange(this, 2)">
+              </label>
+            </div>
+            <div class="upload-list" id="file-list-2"></div>
           </div>
         </article>
 
-        <!-- CARD 3 -->
-        <article class="card" data-index="3">
-          <div class="card-icon-wrap">
-            <i class="fa-solid fa-robot"></i>
+        <article class="project-card">
+          <div class="project-num">03</div>
+          <div class="project-header">
+            <div class="project-icon-box"><i class="fa-solid fa-brain"></i></div>
+            <h3 class="project-title">Tổng quan về Trí tuệ nhân tạo</h3>
           </div>
-          <div class="card-body">
-            <span class="card-number">Bài 03</span>
-            <h3 class="card-title">Tổng quan về Trí tuệ nhân tạo</h3>
-            <div class="card-meta">
-              <div class="meta-row">
-                <i class="fa-solid fa-crosshairs"></i>
-                <div><strong>Mục tiêu:</strong> Tìm hiểu khái niệm và ứng dụng AI.</div>
-              </div>
-              <div class="meta-row">
-                <i class="fa-solid fa-list-check"></i>
-                <div><strong>Quá trình:</strong> Nghiên cứu các lĩnh vực ứng dụng và tác động của AI trong đời sống.</div>
-              </div>
-            </div>
-            <div class="upload-zone" id="upload-zone-3" ondragover="handleDragOver(event)" ondragleave="handleDragLeave(event)" ondrop="handleDrop(event,3)">
-              <input type="file" id="file-input-3" class="file-input" accept=".pdf,.doc,.docx,.ppt,.pptx,.jpg,.jpeg,.png,.zip" onchange="handleFileChange(event,3)" multiple />
-              <div class="upload-idle" id="upload-idle-3">
-                <i class="fa-solid fa-cloud-arrow-up"></i>
-                <span class="upload-label">Kéo thả file vào đây</span>
-                <span class="upload-sub">hoặc</span>
-                <label for="file-input-3" class="upload-btn">Chọn file</label>
-                <span class="upload-types">PDF · DOC · PPT · JPG · PNG · ZIP</span>
-              </div>
-              <div class="upload-list" id="upload-list-3"></div>
-            </div>
+          <p class="project-desc">Kỹ thuật viết Prompt hiệu quả phục vụ học tập, thực hành so sánh đối chiếu kết quả giữa câu lệnh thông thường và câu lệnh chuẩn chuyên gia.</p>
+          <div class="project-actions">
+            <button class="action-btn view-detail-btn" onclick="openModal(3)"><i class="fa-solid fa-arrow-up-right-from-square"></i> Xem yêu cầu</button>
           </div>
-          <div class="card-footer">
-            <button class="btn-detail" onclick="openModal(3)">
-              Xem chi tiết <i class="fa-solid fa-arrow-right"></i>
-            </button>
+          <div class="upload-zone">
+            <div class="upload-dropzone" ondragover="handleDragOver(event)" ondragleave="handleDragLeave(event)" ondrop="handleDrop(event, 3)">
+              <i class="fa-solid fa-cloud-arrow-up upload-icon"></i>
+              <p>Kéo & thả tệp vào đây hoặc</p>
+              <label class="upload-btn">
+                Chọn tệp tin
+                <input type="file" multiple onchange="handleFileChange(this, 3)">
+              </label>
+            </div>
+            <div class="upload-list" id="file-list-3"></div>
           </div>
         </article>
 
-        <!-- CARD 4 -->
-        <article class="card" data-index="4">
-          <div class="card-icon-wrap">
-            <i class="fa-solid fa-users"></i>
+        <article class="project-card">
+          <div class="project-num">04</div>
+          <div class="project-header">
+            <div class="project-icon-box"><i class="fa-solid fa-users-gear"></i></div>
+            <h3 class="project-title">Giao tiếp hợp tác môi trường số</h3>
           </div>
-          <div class="card-body">
-            <span class="card-number">Bài 04</span>
-            <h3 class="card-title">Giao tiếp &amp; Hợp tác trong môi trường số</h3>
-            <div class="card-meta">
-              <div class="meta-row">
-                <i class="fa-solid fa-crosshairs"></i>
-                <div><strong>Mục tiêu:</strong> Sử dụng công cụ cộng tác trực tuyến.</div>
-              </div>
-              <div class="meta-row">
-                <i class="fa-solid fa-list-check"></i>
-                <div><strong>Quá trình:</strong> Thực hiện quản lý dự án nhóm và trao đổi trực tuyến.</div>
-              </div>
-            </div>
-            <div class="upload-zone" id="upload-zone-4" ondragover="handleDragOver(event)" ondragleave="handleDragLeave(event)" ondrop="handleDrop(event,4)">
-              <input type="file" id="file-input-4" class="file-input" accept=".pdf,.doc,.docx,.ppt,.pptx,.jpg,.jpeg,.png,.zip" onchange="handleFileChange(event,4)" multiple />
-              <div class="upload-idle" id="upload-idle-4">
-                <i class="fa-solid fa-cloud-arrow-up"></i>
-                <span class="upload-label">Kéo thả file vào đây</span>
-                <span class="upload-sub">hoặc</span>
-                <label for="file-input-4" class="upload-btn">Chọn file</label>
-                <span class="upload-types">PDF · DOC · PPT · JPG · PNG · ZIP</span>
-              </div>
-              <div class="upload-list" id="upload-list-4"></div>
-            </div>
+          <p class="project-desc">Ứng dụng các công cụ đám mây và hệ thống quản trị dự án trực tuyến nhằm tối ưu hóa hiệu suất làm việc nhóm từ xa một cách đồng bộ.</p>
+          <div class="project-actions">
+            <button class="action-btn view-detail-btn" onclick="openModal(4)"><i class="fa-solid fa-arrow-up-right-from-square"></i> Xem yêu cầu</button>
           </div>
-          <div class="card-footer">
-            <button class="btn-detail" onclick="openModal(4)">
-              Xem chi tiết <i class="fa-solid fa-arrow-right"></i>
-            </button>
+          <div class="upload-zone">
+            <div class="upload-dropzone" ondragover="handleDragOver(event)" ondragleave="handleDragLeave(event)" ondrop="handleDrop(event, 4)">
+              <i class="fa-solid fa-cloud-arrow-up upload-icon"></i>
+              <p>Kéo & thả tệp vào đây hoặc</p>
+              <label class="upload-btn">
+                Chọn tệp tin
+                <input type="file" multiple onchange="handleFileChange(this, 4)">
+              </label>
+            </div>
+            <div class="upload-list" id="file-list-4"></div>
           </div>
         </article>
 
-        <!-- CARD 5 -->
-        <article class="card" data-index="5">
-          <div class="card-icon-wrap">
-            <i class="fa-solid fa-wand-magic-sparkles"></i>
+        <article class="project-card">
+          <div class="project-num">05</div>
+          <div class="project-header">
+            <div class="project-icon-box"><i class="fa-solid fa-photo-film"></i></div>
+            <h3 class="project-title">Sáng tạo nội dung số</h3>
           </div>
-          <div class="card-body">
-            <span class="card-number">Bài 05</span>
-            <h3 class="card-title">Sáng tạo nội dung số</h3>
-            <div class="card-meta">
-              <div class="meta-row">
-                <i class="fa-solid fa-crosshairs"></i>
-                <div><strong>Mục tiêu:</strong> Ứng dụng AI tạo sinh để hỗ trợ sáng tạo nội dung.</div>
-              </div>
-              <div class="meta-row">
-                <i class="fa-solid fa-list-check"></i>
-                <div><strong>Quá trình:</strong> Tạo nội dung bằng công cụ AI và hoàn thiện sản phẩm số.</div>
-              </div>
-            </div>
-            <div class="upload-zone" id="upload-zone-5" ondragover="handleDragOver(event)" ondragleave="handleDragLeave(event)" ondrop="handleDrop(event,5)">
-              <input type="file" id="file-input-5" class="file-input" accept=".pdf,.doc,.docx,.ppt,.pptx,.jpg,.jpeg,.png,.mp4,.zip" onchange="handleFileChange(event,5)" multiple />
-              <div class="upload-idle" id="upload-idle-5">
-                <i class="fa-solid fa-cloud-arrow-up"></i>
-                <span class="upload-label">Kéo thả file vào đây</span>
-                <span class="upload-sub">hoặc</span>
-                <label for="file-input-5" class="upload-btn">Chọn file</label>
-                <span class="upload-types">PDF · PPT · JPG · PNG · MP4 · ZIP</span>
-              </div>
-              <div class="upload-list" id="upload-list-5"></div>
-            </div>
+          <p class="project-desc">Ứng dụng AI thế hệ mới (Generative AI) hỗ trợ lên kịch bản, thiết kế đồ họa và sáng tạo các ấn phẩm truyền thông đa phương tiện.</p>
+          <div class="project-actions">
+            <button class="action-btn view-detail-btn" onclick="openModal(5)"><i class="fa-solid fa-arrow-up-right-from-square"></i> Xem yêu cầu</button>
           </div>
-          <div class="card-footer">
-            <button class="btn-detail" onclick="openModal(5)">
-              Xem chi tiết <i class="fa-solid fa-arrow-right"></i>
-            </button>
+          <div class="upload-zone">
+            <div class="upload-dropzone" ondragover="handleDragOver(event)" ondragleave="handleDragLeave(event)" ondrop="handleDrop(event, 5)">
+              <i class="fa-solid fa-cloud-arrow-up upload-icon"></i>
+              <p>Kéo & thả tệp vào đây hoặc</p>
+              <label class="upload-btn">
+                Chọn tệp tin
+                <input type="file" multiple onchange="handleFileChange(this, 5)">
+              </label>
+            </div>
+            <div class="upload-list" id="file-list-5"></div>
           </div>
         </article>
 
-        <!-- CARD 6 -->
-        <article class="card" data-index="6">
-          <div class="card-icon-wrap">
-            <i class="fa-solid fa-shield-halved"></i>
+        <article class="project-card">
+          <div class="project-num">06</div>
+          <div class="project-header">
+            <div class="project-icon-box"><i class="fa-solid fa-shield-halved"></i></div>
+            <h3 class="project-title">An toàn và Liêm chính học thuật</h3>
           </div>
-          <div class="card-body">
-            <span class="card-number">Bài 06</span>
-            <h3 class="card-title">An toàn &amp; Liêm chính học thuật trong môi trường số</h3>
-            <div class="card-meta">
-              <div class="meta-row">
-                <i class="fa-solid fa-crosshairs"></i>
-                <div><strong>Mục tiêu:</strong> Nâng cao nhận thức về sử dụng AI có trách nhiệm.</div>
-              </div>
-              <div class="meta-row">
-                <i class="fa-solid fa-list-check"></i>
-                <div><strong>Quá trình:</strong> Nghiên cứu các nguyên tắc đạo đức và liêm chính học thuật trong thời đại số.</div>
-              </div>
-            </div>
-            <div class="upload-zone" id="upload-zone-6" ondragover="handleDragOver(event)" ondragleave="handleDragLeave(event)" ondrop="handleDrop(event,6)">
-              <input type="file" id="file-input-6" class="file-input" accept=".pdf,.doc,.docx,.ppt,.pptx,.jpg,.jpeg,.png,.zip" onchange="handleFileChange(event,6)" multiple />
-              <div class="upload-idle" id="upload-idle-6">
-                <i class="fa-solid fa-cloud-arrow-up"></i>
-                <span class="upload-label">Kéo thả file vào đây</span>
-                <span class="upload-sub">hoặc</span>
-                <label for="file-input-6" class="upload-btn">Chọn file</label>
-                <span class="upload-types">PDF · DOC · PPT · JPG · PNG · ZIP</span>
-              </div>
-              <div class="upload-list" id="upload-list-6"></div>
-            </div>
+          <p class="project-desc">Xây dựng bộ nguyên tắc ứng xử an toàn trên không gian mạng và cam kết tuân thủ đạo đức, liêm chính học thuật khi sử dụng công cụ AI.</p>
+          <div class="project-actions">
+            <button class="action-btn view-detail-btn" onclick="openModal(6)"><i class="fa-solid fa-arrow-up-right-from-square"></i> Xem yêu cầu</button>
           </div>
-          <div class="card-footer">
-            <button class="btn-detail" onclick="openModal(6)">
-              Xem chi tiết <i class="fa-solid fa-arrow-right"></i>
-            </button>
+          <div class="upload-zone">
+            <div class="upload-dropzone" ondragover="handleDragOver(event)" ondragleave="handleDragLeave(event)" ondrop="handleDrop(event, 6)">
+              <i class="fa-solid fa-cloud-arrow-up upload-icon"></i>
+              <p>Kéo & thả tệp vào đây hoặc</p>
+              <label class="upload-btn">
+                Chọn tệp tin
+                <input type="file" multiple onchange="handleFileChange(this, 6)">
+              </label>
+            </div>
+            <div class="upload-list" id="file-list-6"></div>
           </div>
         </article>
 
-      </div><!-- /cards-grid -->
+      </div>
     </div>
   </section>
 
-  <!-- ===================== SECTION 3: SUMMARY ===================== -->
-  <section class="section summary-section" id="summary">
+  <section class="summary" id="summary">
     <div class="container">
-      <div class="section-heading center">
-        <span class="section-label">03 / Tổng kết</span>
-        <h2 class="section-title">Nhìn lại hành trình</h2>
+      <div class="section-header text-center">
+        <p class="section-subtitle">Chặng đường nhìn lại</p>
+        <h2 class="section-title display-font">Tổng kết môn học</h2>
+        <div class="header-line"></div>
       </div>
-      <p class="summary-lead">
-        Thông qua dự án Portfolio, tôi đã rèn luyện được kỹ năng tìm kiếm thông tin,
-        sử dụng công cụ số, làm việc nhóm và ứng dụng AI trong học tập. Đây là cơ hội
-        để tôi tổng hợp những kiến thức đã học và xây dựng hồ sơ học tập cá nhân.
-      </p>
+
       <div class="summary-grid">
         <div class="sum-card">
-          <div class="sum-icon"><i class="fa-solid fa-star"></i></div>
-          <h3>Trải nghiệm thực hiện</h3>
-          <p>Xây dựng Portfolio là lần đầu tôi tiếp cận việc tổng hợp sản phẩm học tập một cách có hệ thống.
-             Quá trình này giúp tôi nhận ra tầm quan trọng của việc lưu trữ và trình bày thông tin rõ ràng, khoa học.</p>
+          <div class="sum-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+          <h3>Trải nghiệm cá nhân</h3>
+          <p>Môn học đem lại góc nhìn thực tiễn và vô cùng hiện đại. Từ việc lúng túng khi tương tác với AI, tôi đã tự tin làm chủ câu lệnh để khai thác tri thức phục vụ cho chuyên ngành kỹ thuật Cơ điện tử của mình.</p>
         </div>
         <div class="sum-card">
-          <div class="sum-icon"><i class="fa-solid fa-book-open"></i></div>
-          <h3>Kiến thức đã học được</h3>
+          <div class="sum-icon"><i class="fa-solid fa-gem"></i></div>
+          <h3>Giá trị gặt hái</h3>
           <ul>
-            <li>Cấu tạo và hoạt động của máy tính</li>
-            <li>Kỹ thuật khai thác &amp; đánh giá thông tin</li>
-            <li>Khái niệm &amp; ứng dụng thực tiễn của AI</li>
-            <li>Nguyên tắc đạo đức trong môi trường số</li>
-          </ul>
-        </div>
-        <div class="sum-card">
-          <div class="sum-icon"><i class="fa-solid fa-trophy"></i></div>
-          <h3>Kỹ năng đạt được</h3>
-          <ul>
-            <li>Tìm kiếm thông tin nâng cao</li>
-            <li>Sử dụng công cụ cộng tác trực tuyến</li>
-            <li>Ứng dụng AI tạo sinh vào học tập</li>
-            <li>Trình bày &amp; thiết kế tài liệu số</li>
-          </ul>
-        </div>
-        <div class="sum-card">
-          <div class="sum-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
-          <h3>Khó khăn gặp phải</h3>
-          <ul>
-            <li>Quản lý thời gian giữa các môn học</li>
+            <li>Biết cách phân chia, sắp xếp dữ liệu khoa học</li>
+            <li>Nâng cao kỹ năng tư duy phản biện khi nhận thông tin</li>
             <li>Đánh giá độ tin cậy của nguồn thông tin</li>
             <li>Làm quen với nhiều công cụ số mới</li>
             <li>Đảm bảo tính liêm chính khi dùng AI</li>
@@ -413,15 +248,12 @@
         <div class="sum-card sum-card--wide">
           <div class="sum-icon"><i class="fa-solid fa-rocket"></i></div>
           <h3>Hướng phát triển trong tương lai</h3>
-          <p>Tiếp tục cập nhật Portfolio với các dự án mới, học sâu hơn về lập trình nhúng, tự động hóa và
-             Machine Learning ứng dụng trong Cơ điện tử. Đồng thời, tham gia các dự án nhóm, cuộc thi kỹ thuật
-             để mài giũa kỹ năng thực hành và mở rộng mạng lưới học thuật.</p>
+          <p>Tiếp tục cập nhật Portfolio với các dự án mới, học sâu hơn về lập trình nhúng, tự động hóa và Machine Learning ứng dụng trong Cơ điện tử. Đồng thời, tham gia các dự án nhóm, cuộc thi kỹ thuật để mài giũa kỹ năng thực hành và mở rộng mạng lưới học thuật.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===================== FOOTER ===================== -->
   <footer class="footer">
     <div class="footer-inner">
       <p class="footer-name">Nguyễn Đức Toàn</p>
@@ -430,13 +262,32 @@
     </div>
   </footer>
 
-  <!-- ===================== MODAL ===================== -->
-  <div class="modal-overlay" id="modal-overlay" role="dialog" aria-modal="true">
+  <div class="modal-overlay" id="modal-overlay" role=\"dialog\" aria-modal=\"true\">
     <div class="modal-box">
       <button class="modal-close" id="modal-close" aria-label="Đóng">
         <i class="fa-solid fa-xmark"></i>
       </button>
-      <div class="modal-content" id="modal-content"></div>
+      <div class="modal-header">
+        <div class="modal-icon-container" id="modal-project-icon">
+          <i id="modal-attach-icon" class="fa-solid fa-file-invoice"></i>
+        </div>
+        <h3 id="modal-title" class="display-font">Tên bài tập dự án</h3>
+      </div>
+      <div class="modal-body">
+        <div class="modal-section">
+          <h4><i class="fa-solid fa-bullseye"></i> Mục tiêu bài tập</h4>
+          <p id="modal-goal">Nội dung mục tiêu...</p>
+        </div>
+        <div class="modal-section">
+          <h4><i class="fa-solid fa-list-check"></i> Các bước thực hiện</h4>
+          <ul id="modal-process" class="modal-steps">
+            </ul>
+        </div>
+        <div class="modal-section">
+          <h4><i class="fa-solid fa-paperclip"></i> Yêu cầu tệp đính kèm</h4>
+          <span class="attachment-badge"><i id="modal-attach-icon-spec" class="fa-solid fa-circle-info"></i> <span id="modal-attach-text">Định dạng bài làm</span></span>
+        </div>
+      </div>
     </div>
   </div>
 
