@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio – Nguyễn Đức Toàn</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ── NAVBAR ────────────────────────────────────────────── -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="nav-brand">NDT<span class="dot">.</span></a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#home" class="nav-link active">Giới thiệu</a></li>
+        <li><a href="#about" class="nav-link">Bài tập dự án</a></li>
+        <li><a href="#summary" class="nav-link">Tổng kết</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ── HERO SECTION ──────────────────────────────────────── -->
+  <header class="hero" id="home">
+    <div class="hero-container">
+      <p class="hero-subtitle">Digital Portfolio Cá Nhân</p>
+      <h1 class="hero-title">Nguyễn Đức Toàn</h1>
+      <p class="hero-tagline">Hành trình khám phá và làm chủ Công nghệ thông tin</p>
+      <p class="hero-desc">Chào mừng thầy cô và các bạn đến với trang lưu trữ các sản phẩm, dự án học tập và minh chứng thực hành trong học phần Công nghệ thông tin. Trang web được xây dựng nhằm tổng hợp năng lực số và tư duy sáng tạo trong môi trường học thuật hiện đại.</p>
+      <div class="hero-buttons">
+        <a href="#about" class="btn btn--primary">Xem bài tập dự án</a>
+        <a href="#summary" class="btn btn--secondary">Xem tổng kết học phần</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── ABOUT / PROJECTS WORK SECTION ──────────────────────── -->
+  <section class="projects" id="about">
+    <div class="container">
+      <div class="section-header text-center">
+        <p class="section-subtitle">Sản phẩm thực hành</p>
+        <h2 class="section-title">Bài tập dự án</h2>
+        <div class="header-line"></div>
+      </div>
+
+      <div class="projects-grid">
+        <!-- Bài 1 -->
+        <div class="project-card">
+          <span class="project-num">01</span>
+          <div class="project-header">
+            <div class="project-icon-box"><i class="fa-solid fa-computer"></i></div>
+            <h3 class="project-title">Máy tính và các thiết bị ngoại vi</h3>
+          </div>
+          <p class="project-desc">Bài tập tìm hiểu về kiến trúc máy tính, cách phân loại và quản lý cấu trúc tệp tin một cách khoa học trên hệ thống máy tính cá nhân.</p>
+          <div class="project-actions">
+            <button class="action-btn" onclick="openModal(1)"><i class="fa-solid fa-arrow-up-right-from-square"></i> Xem yêu cầu</button>
+          </div>
+          <div class="upload-zone">
+            <!-- Khu vực script.js sẽ tự động chèn danh sách file tĩnh vào đây -->
+            <div class="upload-list" id="file-list-1"></div>
+          </div>
+        </div>
+
+        <!-- Bài 2 -->
+        <div class="project-card">
+          <span class="project-num">02</span>
+          <div class="project-header">
+            <div class="project-icon-box"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+            <h3 class="project-title">Khai thác dữ liệu và thông tin</h3>
+          </div>
+          <p class="project-desc">Thực hành tìm kiếm thông tin nâng cao sử dụng các toán tử tìm kiếm chuyên biệt và ứng dụng bộ tiêu chí đánh giá độ tin cậy của tài liệu.</p>
+          <div class="project-actions">
+            <button class="action-btn" onclick="openModal(2)"><i class="fa-solid fa-arrow-up-right-from-square"></i> Xem yêu cầu</button>
+          </div>
+          <div class="upload-zone">
+            <div class="upload-list" id="file-list-2"></div>
+          </div>
+        </div>
+
+        <!-- Bài 3 -->
+        <div class="project-card">
+          <span class="project-num">03</span>
+          <div class="project-header">
+            <div class="project-icon-box"><i class="fa-solid fa-brain"></i></div>
+            <h3 class="project-title">Tổng quan về Trí tuệ nhân tạo</h3>
+          </div>
+          <p class="project-desc">Kỹ thuật viết Prompt hiệu quả phục vụ học tập, thực hành so sánh kết quả giữa câu lệnh thông thường và câu lệnh chuẩn chuyên gia.</p>
+          <div class="project-actions">
+            <button class="action-btn" onclick="openModal(3)"><i class="fa-solid fa-arrow-up-right-from-square"></i> Xem yêu cầu</button>
+          </div>
+          <div class="upload-zone">
+            <div class="upload-list" id="file-list-3"></div>
+          </div>
+        </div>
+
+        <!-- Bài 4 -->
+        <div class="project-card">
+          <span class="project-num">04</span>
+          <div class="project-header">
+            <div class="project-icon-box"><i class="fa-solid fa-users-gear"></i></div>
+            <h3 class="project-title">Giao tiếp hợp tác môi trường số</h3>
+          </div>
+          <p class="project-desc">Ứng dụng các công cụ đám mây và hệ thống quản trị dự án trực tuyến nhằm tối ưu hóa hiệu suất làm việc nhóm từ xa một cách đồng bộ.</p>
+          <div class="project-actions">
+            <button class="action-btn" onclick="openModal(4)"><i class="fa-solid fa-arrow-up-right-from-square"></i> Xem yêu cầu</button>
+          </div>
+          <div class="upload-zone">
+            <div class="upload-list" id="file-list-4"></div>
+          </div>
+        </div>
+
+        <!-- Bài 5 -->
+        <div class="project-card">
+          <span class="project-num">05</span>
+          <div class="project-header">
+            <div class="project-icon-box"><i class="fa-solid fa-photo-film"></i></div>
+            <h3 class="project-title">Sáng tạo nội dung số</h3>
+          </div>
+          <p class="project-desc">Thiết kế ấn phẩm truyền thông, lên kịch bản và biên tập video đa nền tảng kết hợp các công cụ hỗ trợ thông minh thế hệ mới.</p>
+          <div class="project-actions">
+            <button class="action-btn" onclick="openModal(5)"><i class="fa-solid fa-arrow-up-right-from-square"></i> Xem yêu cầu</button>
+          </div>
+          <div class="upload-zone">
+            <div class="upload-list" id="file-list-5"></div>
+          </div>
+        </div>
+
+        <!-- Bài 6 -->
+        <div class="project-card">
+          <span class="project-num">06</span>
+          <div class="project-header">
+            <div class="project-icon-box"><i class="fa-solid fa-shield-halved"></i></div>
+            <h3 class="project-title">An toàn và Liêm chính học thuật</h3>
+          </div>
+          <p class="project-desc">Xây dựng thói quen bảo mật thông tin cá nhân và áp dụng các nguyên tắc trích dẫn chuẩn mực, chống đạo văn trong kỷ nguyên số.</p>
+          <div class="project-actions">
+            <button class="action-btn" onclick="openModal(6)"><i class="fa-solid fa-arrow-up-right-from-square"></i> Xem yêu cầu</button>
+          </div>
+          <div class="upload-zone">
+            <div class="upload-list" id="file-list-6"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SUMMARY SECTION ────────────────────────────────────── -->
+  <section class="summary" id="summary">
+    <div class="container">
+      <div class="section-header text-center">
+        <p class="section-subtitle">Chặng đường nhìn lại</p>
+        <h2 class="section-title">Tổng kết học phần</h2>
+        <div class="header-line"></div>
+      </div>
+
+      <div class="summary-grid">
+        <div class="sum-card">
+          <div class="sum-icon"><i class="fa-solid fa-lightbulb"></i></div>
+          <h3>Kiến thức tiếp thu</h3>
+          <p>Qua học phần này, em đã nắm vững kiến thức từ nền tảng phần cứng máy tính đến các kỹ năng nâng cao như làm việc nhóm trên đám mây, khai thác dữ liệu lớn, ứng dụng AI một cách liêm chính và tư duy thiết kế sản phẩm truyền thông đa phương tiện.</p>
+        </div>
+
+        <div class="sum-card">
+          <div class="sum-icon"><i class="fa-solid fa-circle-check"></i></div>
+          <h3>Giá trị cốt lõi</h3>
+          <p>Kỹ năng số không chỉ dừng lại ở thao tác công cụ, mà quan trọng hơn là tư duy giải quyết vấn đề, tinh thần trách nhiệm khi chia sẻ không gian mạng và thái độ tôn trọng bản quyền, liêm chính trong học thuật.</p>
+        </div>
+
+        <div class="sum-card sum-card--wide">
+          <div class="sum-icon"><i class="fa-solid fa-star"></i></div>
+          <h3>Lời cảm ơn</h3>
+          <p>Em xin chân thành cảm ơn Thầy/Cô bộ môn đã tận tình hướng dẫn, định hướng và đồng hành cùng em trong suốt học phần. Những kiến thức và kỹ năng thực tiễn này chắc chắn sẽ là bệ phóng vững chắc cho công việc và quá trình tự học của em trong tương lai.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ────────────────────────────────────────────── -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <p class="footer-name">Nguyễn Đức Toàn</p>
+      <p class="footer-sub">Digital Portfolio © 2026</p>
+      <p class="footer-course">Học phần: Công nghệ thông tin cơ bản</p>
+    </div>
+  </footer>
+
+  <!-- ── MODAL WINDOW (Xem chi tiết yêu cầu) ─────────────────── -->
+  <div class="modal-overlay" id="modal-overlay">
+    <div class="modal-box">
+      <button class="modal-close" id="modal-close"><i class="fa-solid fa-xmark"></i></button>
+      <div class="modal-header">
+        <div class="modal-icon-container" id="modal-icon-box">
+          <i class="fa-solid fa-file-lines" id="modal-main-icon"></i>
+        </div>
+        <h3 id="modal-title">Tiêu đề bài tập</h3>
+      </div>
+      
+      <div class="modal-section">
+        <h4><i class="fa-solid fa-bullseye"></i> Mục tiêu bài học</h4>
+        <p id="modal-goal">Nội dung mục tiêu...</p>
+      </div>
+
+      <div class="modal-section">
+        <h4><i class="fa-solid fa-list-check"></i> Các bước triển khai</h4>
+        <ul class="modal-steps" id="modal-process">
+          <!-- Các bước tự động render từ script.js -->
+        </ul>
+      </div>
+
+      <div class="modal-section">
+        <h4><i class="fa-solid fa-paperclip"></i> Định dạng minh chứng</h4>
+        <span class="attachment-badge">
+          <i class="fa-solid fa-file-pdf" id="modal-attach-icon"></i> 
+          <span id="modal-attach-text">PDF</span>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Custom JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
